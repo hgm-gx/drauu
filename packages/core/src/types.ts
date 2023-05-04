@@ -22,7 +22,7 @@ export interface Brush {
    * Color filled, only works in `rectangle` and `ellipse` mode.
    * @default 'transparent'
    */
-  fill?: string
+  fill?: boolean | string
 
   /**
    * Pattern of dashes, set to `undefined` for solid line.

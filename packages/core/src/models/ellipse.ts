@@ -4,7 +4,8 @@ import { BaseModel } from './base'
 
 export class EllipseModel extends BaseModel<SVGEllipseElement> {
   override onStart(point: Point) {
-    this.el = this.createElement('ellipse')
+    this.el = this.createElement('ellipse',
+      { fill: this.brush.fill === true ? this.brush.color : 'transparent' })
 
     this.attr('cx', point.x)
     this.attr('cy', point.y)

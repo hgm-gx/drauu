@@ -4,7 +4,8 @@ import { BaseModel } from './base'
 
 export class RectModel extends BaseModel<SVGRectElement> {
   override onStart(point: Point) {
-    this.el = this.createElement('rect')
+    this.el = this.createElement('rect',
+      { fill: this.brush.fill === true ? this.brush.color : 'transparent' })
 
     if (this.brush.cornerRadius) {
       this.attr('rx', this.brush.cornerRadius)

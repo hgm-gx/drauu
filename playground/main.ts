@@ -73,6 +73,8 @@ const modes: { el: HTMLElement; brush: Partial<Brush> }[] = [
   { el: document.getElementById('m-arrow')!, brush: { mode: 'line', arrowEnd: true } },
   { el: document.getElementById('m-rect')!, brush: { mode: 'rectangle', arrowEnd: false } },
   { el: document.getElementById('m-ellipse')!, brush: { mode: 'ellipse', arrowEnd: false } },
+  { el: document.getElementById('m-rect-fill')!, brush: { mode: 'rectangle', arrowEnd: false, fill: true } },
+  { el: document.getElementById('m-ellipse-fill')!, brush: { mode: 'ellipse', arrowEnd: false, fill: true } },
 ]
 modes.forEach(({ el, brush }) => {
   el.addEventListener('click', () => {
@@ -80,6 +82,7 @@ modes.forEach(({ el, brush }) => {
     el.classList.add('active')
     drauu.brush.arrowEnd = brush.arrowEnd
     drauu.mode = brush.mode as DrawingMode
+    drauu.brush.fill = brush.fill
   })
 })
 
